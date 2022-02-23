@@ -23,14 +23,14 @@
           </ul>
         </div>
         <div class="card--title">
-          <h3>Colin McGraw</h3>
-          <p>Web Developer</p>
-          <nuxt-link to="/update-profile">
+          <h3>{{ user.firstName }}</h3>
+          <p>{{ user.lastName }}</p>
+          <button @click="routerPush">
             <fa
               class="mt-6 text-3xl text-indigo-600"
               :icon="['fa', 'square-pen']"
             />
-          </nuxt-link>
+          </button>
         </div>
 
         <div class="card--desc">
@@ -67,7 +67,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["user"],
+  methods: {
+    routerPush() {
+      this.$router.push({ path: `/update-profile/${this.user.id}` });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

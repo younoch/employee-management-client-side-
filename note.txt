@@ -1,0 +1,8 @@
+
+    "firstName": Full Name,
+    "lastName": Surname,
+    "username": Profile Image url
+    "password": User Password
+    "email":  User Email
+    "secondaryEmail": User Contact
+    "address": User address
