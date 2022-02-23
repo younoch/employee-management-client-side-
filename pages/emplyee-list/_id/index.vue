@@ -1,9 +1,9 @@
 <template>
   <!-- class="grid grid-cols-12" -->
   <section class="grid grid-cols-12">
-    <ProfileCard class="col-span-3" />
+    <ProfileCard :user="loggedUser" class="col-span-3" />
     <div
-      class="flex items-center justify-center overflow-hidden col-span-9"
+      class="flex items-center justify-center col-span-9 overflow-hidden"
       style="background: #edf2f7"
     >
       <div class="w-full p-8 pb-0 bg-white rounded-md">
@@ -35,30 +35,12 @@
             </div>
             <div class="ml-10 space-x-8 lg:ml-40">
               <button
-                class="
-                  px-4
-                  py-2
-                  font-semibold
-                  tracking-wide
-                  text-white
-                  bg-indigo-600
-                  rounded-md
-                  cursor-pointer
-                "
+                class="px-4 py-2 font-semibold tracking-wide text-white bg-indigo-600 rounded-md cursor-pointer "
               >
                 New Report
               </button>
               <button
-                class="
-                  px-4
-                  py-2
-                  font-semibold
-                  tracking-wide
-                  text-white
-                  bg-indigo-600
-                  rounded-md
-                  cursor-pointer
-                "
+                class="px-4 py-2 font-semibold tracking-wide text-white bg-indigo-600 rounded-md cursor-pointer "
               >
                 Create
               </button>
@@ -66,7 +48,7 @@
           </div>
         </div>
         <div>
-          <div class="pr-4 pt-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
+          <div class="pt-4 pr-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
             <div
               class="inline-block min-w-full overflow-hidden rounded-lg shadow"
             >
@@ -74,77 +56,27 @@
                 <thead>
                   <tr>
                     <th
-                      class="
-                        px-5
-                        py-3
-                        text-xs
-                        font-semibold
-                        tracking-wider
-                        text-left text-gray-600
-                        uppercase
-                        bg-gray-100
-                        border-b-2 border-gray-200
-                      "
+                      class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200 "
                     >
                       Name
                     </th>
                     <th
-                      class="
-                        px-5
-                        py-3
-                        text-xs
-                        font-semibold
-                        tracking-wider
-                        text-left text-gray-600
-                        uppercase
-                        bg-gray-100
-                        border-b-2 border-gray-200
-                      "
+                      class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200 "
                     >
                       Surname
                     </th>
                     <th
-                      class="
-                        px-5
-                        py-3
-                        text-xs
-                        font-semibold
-                        tracking-wider
-                        text-left text-gray-600
-                        uppercase
-                        bg-gray-100
-                        border-b-2 border-gray-200
-                      "
+                      class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200 "
                     >
                       Email
                     </th>
                     <th
-                      class="
-                        px-5
-                        py-3
-                        text-xs
-                        font-semibold
-                        tracking-wider
-                        text-left text-gray-600
-                        uppercase
-                        bg-gray-100
-                        border-b-2 border-gray-200
-                      "
+                      class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200 "
                     >
                       Contact
                     </th>
                     <th
-                      class="
-                        px-5
-                        py-3
-                        text-xs
-                        font-semibold
-                        tracking-wider
-                        text-left text-gray-600
-                        uppercase
-                        bg-gray-100
-                        border-b-2 border-gray-200
-                      "
+                      class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200 "
                     >
                       Status
                     </th>
@@ -153,13 +85,7 @@
                 <tbody>
                   <tr v-for="(user, index) in gettersusers" :key="index">
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <div class="flex items-center">
                         <div class="flex-shrink-0 w-10 h-10">
@@ -171,11 +97,7 @@
                         </div>
                         <div class="ml-3">
                           <p
-                            class="
-                              text-gray-900
-                              whitespace-no-wrap
-                              font-semibold
-                            "
+                            class="font-semibold text-gray-900 whitespace-no-wrap "
                           >
                             {{ user.firstName }}
                           </p>
@@ -183,73 +105,35 @@
                       </div>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         {{ user.lastName }}
                       </p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         {{ user.email }}
                       </p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         {{ user.secondaryEmail }}
                       </p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <span
-                        class="
-                          relative
-                          inline-block
-                          px-3
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-green-900
-                        "
+                        class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900 "
                       >
                         <span
                           aria-hidden
-                          class="
-                            absolute
-                            inset-0
-                            bg-green-200
-                            rounded-full
-                            opacity-50
-                          "
+                          class="absolute inset-0 bg-green-200 rounded-full opacity-50 "
                         ></span>
                         <span class="relative">Active</span>
                       </span>
@@ -257,13 +141,7 @@
                   </tr>
                   <tr>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <div class="flex items-center">
                         <div class="flex-shrink-0 w-10 h-10">
@@ -281,24 +159,12 @@
                       </div>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">Editor</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         Jan 01, 2020
@@ -306,45 +172,19 @@
                     </td>
 
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">77</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <span
-                        class="
-                          relative
-                          inline-block
-                          px-3
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-green-900
-                        "
+                        class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900 "
                       >
                         <span
                           aria-hidden
-                          class="
-                            absolute
-                            inset-0
-                            bg-green-200
-                            rounded-full
-                            opacity-50
-                          "
+                          class="absolute inset-0 bg-green-200 rounded-full opacity-50 "
                         ></span>
                         <span class="relative">Active</span>
                       </span>
@@ -352,13 +192,7 @@
                   </tr>
                   <tr>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <div class="flex items-center">
                         <div class="flex-shrink-0 w-10 h-10">
@@ -376,24 +210,12 @@
                       </div>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">Editor</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         Jan 10, 2020
@@ -401,45 +223,19 @@
                     </td>
 
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">64</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <span
-                        class="
-                          relative
-                          inline-block
-                          px-3
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-orange-900
-                        "
+                        class="relative inline-block px-3 py-1 font-semibold leading-tight text-orange-900 "
                       >
                         <span
                           aria-hidden
-                          class="
-                            absolute
-                            inset-0
-                            bg-orange-200
-                            rounded-full
-                            opacity-50
-                          "
+                          class="absolute inset-0 bg-orange-200 rounded-full opacity-50 "
                         ></span>
                         <span class="relative">Suspended</span>
                       </span>
@@ -475,25 +271,11 @@
                     </td>
                     <td class="px-5 py-5 text-sm bg-white">
                       <span
-                        class="
-                          relative
-                          inline-block
-                          px-3
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-red-900
-                        "
+                        class="relative inline-block px-3 py-1 font-semibold leading-tight text-red-900 "
                       >
                         <span
                           aria-hidden
-                          class="
-                            absolute
-                            inset-0
-                            bg-red-200
-                            rounded-full
-                            opacity-50
-                          "
+                          class="absolute inset-0 bg-red-200 rounded-full opacity-50 "
                         ></span>
                         <span class="relative">Inactive</span>
                       </span>
@@ -501,13 +283,7 @@
                   </tr>
                   <tr>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <div class="flex items-center">
                         <div class="flex-shrink-0 w-10 h-10">
@@ -525,24 +301,12 @@
                       </div>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">Editor</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">
                         Jan 10, 2020
@@ -550,45 +314,19 @@
                     </td>
 
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <p class="text-gray-900 whitespace-no-wrap">64</p>
                     </td>
                     <td
-                      class="
-                        px-5
-                        py-5
-                        text-sm
-                        bg-white
-                        border-b border-gray-200
-                      "
+                      class="px-5 py-5 text-sm bg-white border-b border-gray-200 "
                     >
                       <span
-                        class="
-                          relative
-                          inline-block
-                          px-3
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-orange-900
-                        "
+                        class="relative inline-block px-3 py-1 font-semibold leading-tight text-orange-900 "
                       >
                         <span
                           aria-hidden
-                          class="
-                            absolute
-                            inset-0
-                            bg-orange-200
-                            rounded-full
-                            opacity-50
-                          "
+                          class="absolute inset-0 bg-orange-200 rounded-full opacity-50 "
                         ></span>
                         <span class="relative">Suspended</span>
                       </span>
@@ -597,50 +335,20 @@
                 </tbody>
               </table>
               <div
-                class="
-                  flex flex-col
-                  items-center
-                  px-5
-                  py-5
-                  bg-white
-                  border-t
-                  xs:flex-row xs:justify-between
-                "
+                class="flex flex-col items-center px-5 py-5 bg-white border-t xs:flex-row xs:justify-between"
               >
                 <span class="text-xs text-gray-900 xs:text-sm">
                   Showing 1 to 5 of 50 Entries
                 </span>
                 <div class="inline-flex mt-2 xs:mt-0">
                   <button
-                    class="
-                      px-4
-                      py-2
-                      text-sm
-                      font-semibold
-                      transition
-                      duration-150
-                      bg-indigo-600
-                      rounded-l
-                      text-indigo-50
-                      hover:bg-indigo-500
-                    "
+                    class="px-4 py-2 text-sm font-semibold transition duration-150 bg-indigo-600 rounded-l text-indigo-50 hover:bg-indigo-500"
                   >
                     Prev
                   </button>
                   &nbsp; &nbsp;
                   <button
-                    class="
-                      px-4
-                      py-2
-                      text-sm
-                      font-semibold
-                      transition
-                      duration-150
-                      bg-indigo-600
-                      rounded-r
-                      text-indigo-50
-                      hover:bg-indigo-500
-                    "
+                    class="px-4 py-2 text-sm font-semibold transition duration-150 bg-indigo-600 rounded-r text-indigo-50 hover:bg-indigo-500"
                   >
                     Next
                   </button>
@@ -659,12 +367,16 @@ export default {
   data() {
     return {
       isShowProfile: false,
+      loggedUser: "",
     };
   },
   computed: {
     gettersusers() {
-      console.log("The id is younoch:", this.$route.params.id);
-      return this.$store.getters.allUsers;
+      const loggedUserId = this.$route.params.id;
+      const allUsers = this.$store.getters.allUsers;
+      this.loggedUser = allUsers.find(el => el.id == loggedUserId);
+      console.log(this.loggedUser);
+      return allUsers;
     },
     users() {
       return this.$store.state.users;
